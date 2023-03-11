@@ -1,0 +1,154 @@
+
+._container {
+    max-width: 43rem;
+    margin: 0 auto;
+    padding: 0px 0.9375rem;
+    box-sizing: content-box;
+}
+
+h1 {
+    font-weight: 800;
+    font-size: 1.875rem;
+}
+
+/* faq */
+
+.faq {
+    max-width: 43rem;
+    margin: 1.25rem auto
+}
+
+.faq-item {
+    padding-bottom: 0.625rem;
+    padding-top: 0.625rem;
+    border-top: 0.0625rem solid gray;
+    position: relative;
+}
+
+.faq-item p {
+    display: none;
+    position: absolute;
+    right: 0;
+    margin: 0;
+    top: 19%;
+    font-size: 2.1875rem;
+    transition: 0.3s ease;
+}
+
+.faq-title {
+    display: block;
+    color: blue;
+    cursor: pointer;
+    padding: 0.625rem 0px;
+    transition: .2s ease-out;
+    z-index: 1;
+    position: relative;
+    font-size: 1.5625rem;
+}
+
+.faq-input {
+    appearance: none;
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+.faq-input:checked ~ .faq-title {
+    color: black;
+    transition: 1s ease;
+}
+
+.faq-input:checked ~ .faq-text {
+    position: relative;
+    left: 0;
+    color: black;
+}
+
+.faq-input:checked ~ .rotate {
+    transform: rotate(30deg);
+    transition: 0.3s ease;
+    top: 1.5%;
+}
+
+.faq-input:checked ~ .faq-text .picture {
+    transform: scale(1);
+    transition: transform 1s ease;
+    opacity: 1;
+}
+
+.faq-text {
+    position: absolute;
+    color: black;
+    padding: 0.625rem 0rem;
+    font-size: 0.875rem;
+    text-align: center;
+    left: -100vw;
+    cursor: pointer;
+}
+
+.picture {
+    width: 25rem;
+    height: 25rem;
+    transform: scale(0.7);
+    transition: transform 1s ease;
+    opacity: 0;
+}
+
+@media (max-width: 450px) {
+    .picture {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media (min-width: 850px) {
+    .faq-input:hover ~ .faq-text .picture {
+        transform: scale(1);
+        transition: transform 1s ease;
+        opacity: 1
+    }
+
+    .faq-input:hover ~ .rotate {
+        transform: rotate(30deg);
+        transition: 0.3s ease;
+        top: 1.5%;
+    }
+    
+    .faq-input:hover ~ .faq-text {
+        position: relative;
+        left: 0;
+        color: black;
+    }
+
+    .faq:hover .faq-item p {
+        transition: 0.3s ease;
+        display: block;
+    }
+
+    .faq-title:hover {
+        color: black;
+    }
+
+    .faq:hover label{
+        color: black;
+    }
+
+    h1 {
+        font-size: 1.45rem;
+    }
+
+    .faq-title {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 450px) {
+    h1 {
+        font-size: 1.3rem;
+    }
+
+    .faq-title {
+        font-size: 1rem;
+    }
+}
+
